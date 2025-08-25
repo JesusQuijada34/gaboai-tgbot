@@ -1,0 +1,53 @@
+#!/usr/bin/env sh
+
+echo "[Sensor] Iniciando instalacion de dependencias..."
+if [ ! -f "./lib/requirements.txt" ]; then
+    echo "[Sensor] El archivo lib/requirements.txt no existe. Abortando instalacion de dependencias."
+    exit 1
+else
+    echo "[Sensor] Archivo de dependencias encontrado."
+    pip install -r "./lib/requirements.txt"
+    if [ $? -ne 0 ]; then
+        echo "[Sensor] Error al instalar dependencias."
+        exit 1
+    fi
+fi
+
+clear
+
+# Sensor: Comprobar si Python está instalado
+if ! command -v python3 >/dev/null 2>&1; then
+    echo "[Sensor] Python3 no está instalado. Por favor, instale Python 3.x antes de continuar."
+    exit 1
+else
+    echo "[Sensor] Python3 detectado."
+fi
+
+# Sensor: Cargar variables desde .env si existe
+if [ -f "./.env" ]; then
+    echo "[Sensor] Archivo .env detectado. Cargando variables de entorno..."
+    set -a
+    . "./.env"
+    set +a
+else
+    echo "[Sensor] No se encontró archivo .env. Continuando sin variables de entorno adicionales."
+fi
+
+# Sensor: Comprobar si el script principal existe
+if [ ! -f "./gaboai-tgbot.py" ]; then
+    echo "[Sensor] El archivo gaboai-tgbot.py no existe. Abortando."
+    exit 1
+else
+    echo "[Sensor] Script principal detectado."
+fi
+
+/usr/bin/python3 "./gaboai-tgbot.py"
+exit_code=$?
+
+# Sensor: Comprobar el código de salida del script
+if [ $exit_code -ne 0 ]; then
+    echo "[Sensor] El script gaboai-tgbot.py terminó con errores (código $exit_code)."
+    exit $exit_code
+else
+    echo "[Sensor] El script gaboai-tgbot.py finalizó correctamente."
+fi

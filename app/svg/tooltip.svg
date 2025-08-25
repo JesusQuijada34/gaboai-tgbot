@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tooltipGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1F2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
+    </linearGradient>
+    <filter id="tooltipShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Tooltip Arrow -->
+  <path d="M 100 70 L 90 60 L 110 60 Z" 
+        fill="url(#tooltipGradient)" 
+        filter="url(#tooltipShadow)"/>
+  
+  <!-- Tooltip Background -->
+  <rect x="10" y="10" width="180" height="50" rx="8" ry="8" 
+        fill="url(#tooltipGradient)" 
+        filter="url(#tooltipShadow)"/>
+  
+  <!-- Tooltip Border -->
+  <rect x="10" y="10" width="180" height="50" rx="8" ry="8" 
+        fill="none" 
+        stroke="rgba(255,255,255,0.2)" 
+        stroke-width="1"/>
+  
+  <!-- Content Area -->
+  <rect x="20" y="20" width="160" height="30" rx="4" ry="4" 
+        fill="none" 
+        stroke="rgba(255,255,255,0.1)" 
+        stroke-width="1"/>
+  
+  <!-- Text Placeholder -->
+  <rect x="25" y="25" width="150" height="20" rx="2" ry="2" 
+        fill="rgba(255,255,255,0.1)"/>
+  
+  <!-- Decorative Corner -->
+  <circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="175" cy="25" r="2" fill="rgba(255,255,255,0.3)"/>
+</svg>

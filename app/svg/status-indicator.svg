@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="statusShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Status Circle Background -->
+  <circle cx="12" cy="12" r="10" 
+          fill="rgba(255,255,255,0.9)" 
+          stroke="#D1D5DB" 
+          stroke-width="1"
+          filter="url(#statusShadow)"/>
+  
+  <!-- Success State (Green) -->
+  <circle cx="12" cy="12" r="6" 
+          fill="#10B981" 
+          opacity="0"/>
+  
+  <!-- Warning State (Yellow) -->
+  <circle cx="12" cy="12" r="6" 
+          fill="#F59E0B" 
+          opacity="0"/>
+  
+  <!-- Error State (Red) -->
+  <circle cx="12" cy="12" r="6" 
+          fill="#EF4444" 
+          opacity="0"/>
+  
+  <!-- Info State (Blue) -->
+  <circle cx="12" cy="12" r="6" 
+          fill="#3B82F6" 
+          opacity="0"/>
+  
+  <!-- Inner Glow -->
+  <circle cx="12" cy="12" r="8" 
+          fill="none" 
+          stroke="rgba(107,114,128,0.2)" 
+          stroke-width="1"/>
+  
+  <!-- Status Icon Placeholder -->
+  <circle cx="12" cy="12" r="2" 
+          fill="rgba(107,114,128,0.5)"/>
+</svg>
