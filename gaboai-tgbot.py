@@ -27,7 +27,7 @@ os.makedirs("config", exist_ok=True)
 
 # 🧠 Palabras prohibidas
 BAD_WORDS = ["mierda", "puta", "maldito", "coño", "jódete", "imbécil", "estúpido"]
-PROTECTED_LINKS = ["github.com/JesusQuijada34", "c/"]
+PROTECTED_LINKS = ["", "c/"]
 
 # 🔐 Leer credenciales: busca group_id en el JSON, si no lo pide por terminal
 def get_credentials():
